@@ -8,7 +8,7 @@ static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
 #define MAXLEN 2048
-#define SEP {separator, "%s", "  "},
+#define SEP {separator, "%s", " ¦ "},
 //ﰙ 
 
 /*
@@ -67,11 +67,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-        {run_command, "%s",                      "light -G"},
+        {run_command, "%s",                      "light -G | cut -d . -f 1"},
         SEP
         {run_command, "%s",   "bash $HOME/scripts/volume.sh"},
-        SEP
-        {battery_perc, "%s",                          "BAT0"},
         SEP
         {ram_used,    "%s/",                            NULL},
         {ram_total,   "%s",                             NULL},
@@ -81,5 +79,7 @@ static const struct arg args[] = {
         {run_command,"%s","bash $HOME/scripts/connectivity.sh"},
         SEP
 	{datetime,   "%s",                     "%d %b %H:%M"},
+        SEP
+        {battery_perc, "%s",                          "BAT0"},
 
 };

@@ -58,9 +58,9 @@
                         return bprintf("%d",perc);
                 }else if(perc > 30 && perc < 50){
                         return bprintf("%d",perc);
-                }else if(perc > 50 && perc < 80){
+                }else if(perc >= 50 && perc < 80){
                         return bprintf("%d",perc);
-                }else if(perc > 80){
+                }else if(perc >= 80){
                         return bprintf("%d",perc);
                 }
 		return bprintf("%d", perc);
